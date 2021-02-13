@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./quote.css">
+<title>Random quote</title>
+</head>
+<body>
+<div id="upperpara">
+<p style="padding:5px; " id="pfirst">Let sart your </p>
+<p id="daytm"> Morning </p>
+<p style="padding:5px; "id="pend"> with a new quote </p>
+</div>
+
+<div    id="cen">
+<div id="main">
+<div id="uppermain">
+    <i  class="fas fa-quote-left fa-1x fa-pull-left "></i>
+    <p   id="quote" style="display: inline">The most valuable of all talents is that of never using two words when one will do. </p>
+    <i class="fas fa-quote-right fa-1x" style="display: inline"></i></br>
+   <p id="writer">- Thomas Jefferson</p>
+   </div>
+<div id="mainbtn">
+ <a id="change" class="btn btn-primary btn-lg b" onclick="changecolor()">New Quote</a></div>
+
+ 
+</div>
+</div>
+
+<script>
+
+function quoteDay(){
+    let date=new Date();
+    let hr=date.getHours();
+        let tm=document.getElementById("daytm")
+            if(hr<5){
+              tm.innerText="night";
+            }
+            else if(hr>=5&&hr<12){
+            tm.innerText="morning"; 
+            }
+            else if(hr==12){
+            tm.innerText="noon"; 
+            }
+            else if(hr>12&&hr<=17){
+            tm.innerText="afternoon"; 
+            }
+            else if(hr>17&&hr<=19){
+            tm.innerText="evening"; 
+            }
+            else{
+            tm.innerText="night"; 
+            }
+        }
+        quoteDay()
+    
+    var button = document.querySelector("button");
+    
+    function changecolor () {
+      let rgbColor ="rgb(" + Math.floor(Math.random()*255) + ","
+       + Math.floor(Math.random()*255)  + ","
+        + Math.floor(Math.random()*255) + ")" ;
+      document.body.style.backgroundColor = rgbColor;
+      document.getElementById("change").style.backgroundColor=rgbColor;
+      document.getElementById("uppermain").style.color=rgbColor;
+    
+    
+    document.body.style.transition = "all 0.3s ease";
+    
+      
+    
+    let author=[
+      "- Louis L’Amour",
+      "- William Faulkner",
+      "- Terry Pratchett",
+      "- Octavia E. Butler",
+      "- Steven Pressfield",
+      "- Jodi Picoult",
+      "- Jack London",
+      "- Toni Morrison",
+      "- Shannon Hale",
+      "- Ruth Rendell",
+      "- Ray Bradbury",
+      "- Samuel Johnson",
+      "- Herman Melville",
+      "- Stephen King"
+    ];
+    let quote=[
+              "Start writing, no matter what. The water does not flow until the faucet is turned on.",
+              "Get it down. Take chances. It may be bad, but it's the only way you can do anything really good.",
+              "The first draft is just you telling yourself the story.",
+              "You don’t start out writing good stuff. You start out writing crap and thinking it’s good stuff, and then gradually you get better at it.",
+              "Start before you’re ready.",
+              "You can always edit a bad page. You can’t edit a blank page",
+              "You can’t wait for inspiration. You have to go after it with a club.",
+              "I have never started a poem yet whose end I knew. Writing a poem is discovering.",
+              "If there's a book that you want to read, but it hasn't been written yet, then you must write it.",
+              "I'm writing a first draft and reminding myself that I'm simply shoveling sand into a box so that later I can build castles.",
+              "I get a lot of letters from people. They say, \"I want to be a writer. What should I do?\" I tell them to stop writing to me and get on with it.",
+              "First, find out what your hero wants, then just follow him!",
+              "The greatest part of a writer’s time is spent in reading, in order to write. A man will turn over half a library to make a book.",
+              "To produce a mighty book, you must choose a mighty theme",
+              "Description begins in the writer’s imagination but should finish in the reader’s."
+    ];
+    
+    let r=Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+    document.getElementById("quote").innerHTML= quote[r];
+    document.getElementById("writer").innerHTML= author[r];    
+    }
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
